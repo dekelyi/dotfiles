@@ -1,0 +1,15 @@
+[core]
+	fileMode = false
+	excludesfile = /home/dekel/gitignore
+	whitespace = cr-at-eol
+[user]
+	name = Dekel Yigal
+	email = dekelyi@gmail.com
+[merge]
+	tool = code
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  smtpuser = dekelyi@gmail.com
+	confirm = auto

@@ -1,0 +1,52 @@
+#!/bin/bash
+
+get_from_vol() {
+	amixer -D pulse get Master | grep % | awk "{print \$${1}}"| sed -e 's/\[//' -e 's/\]//' | head -n 1
+}
+
+get_vol() {
+    get_from_vol 5
+}
+get_mute() {
+    get_from_vol 6
+}
+
+vol_set() {
+	amixer -D pulse set Master $1 2> /dev/null
+}
+
+vol_notify() {
+	vol=$(get_vol)
+	notify-send 'Volume' "$vol" --icon=$1
+}
+mute_notify() {
+	vol=$(get_vol)
+	mute=$(get_mute)
+	case $mute in
+		on)
+			icon=audio-volume-medium
+			mute_mode=Unmuted
+			;;
+		off)
+			icon=audio-volume-muted	
+			mute_mode=Muted
+			;;
+	esac
+	notify-send 'Volume' "$mute_mode [$vol]" --icon=$icon
+}
+
+case "$1" in
+	up)
+		vol_set 5%+
+		vol_notify audio-volume-high
+		;;
+	down)
+		vol_set 5%-
+		vol_notify audio-volume-low
+		;;
+	toggle)
+		vol_set toggle
+		mute_notify
+		;;
+esac
+	    

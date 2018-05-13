@@ -1,0 +1,36 @@
+out_to_x no
+own_window no
+out_to_console yes
+short_units yes
+use_xft yes
+update_interval 1
+
+
+TEXT
+[
+  { "full_text" : "  \uf0e4  ${mem} / ${memmax} (${memperc}%) ", "color" : "\#606b74" },
+  { "full_text" : "  \uf133  ${time %b %d, %Y} " },
+    ${if_up eno1}{ "full_text" : " ${addr eno1} \u2193${downspeedf eno1}k \u2191${upspeedf eno1}k", "color" : "\#f4bf75"},
+  ${else}
+  ${if_up wlp2s0}{ "full_text" : " ${addr wlp2s0} \u2193${downspeedf wlp2s0}k \u2191${upspeedf wlp2s0}k", "color" : "\#f4bf75"},  
+  ${else}
+  {"full_text": "no connection","color":"\#E59847"},\
+${endif}
+${if_mpd_playing}{ "full_text" : "♬ ${mpd_artist} - ${mpd_title}", "color" : "\#ab76a6"},${endif}
+${if_existing /sys/class/power_supply/AC/online 1}
+   ${if_match ${battery_percent BAT0} <= 30}
+     {"full_text": "\uf0e7 ${battery_percent BAT0}% ${exec acpi -b | cut -d ',' -f 3 | cut -d ' ' -f 2}" , "color":"\#FB4646"},
+   ${else}
+     {"full_text": "\uf0e7 ${battery_percent BAT0}% ${exec acpi -b | cut -d ',' -f 3 | cut -d ' ' -f 2}" , "color":"\#909090"},
+   ${endif}
+${else}
+   ${if_match ${battery_percent BAT0} <= 30}
+     {"full_text": "\uf244 ${battery_percent BAT0}% ${exec acpi -b | cut -d ',' -f 3 | cut -d ' ' -f 2}" , "color":"\#FB4646"},
+   ${else}
+     {"full_text": " \uf241 ${battery_percent BAT0}% ${exec acpi -b | cut -d ',' -f 3 | cut -d ' ' -f 2}" , "color":"\#909090"},
+   ${endif}
+${endif}
+  { "full_text" : "  \uf017  ${time %H:%M} " },
+  { "full_text" : "  \uf11c  ${exec setxkbmap -query | grep layout | cut -d ' ' -f6} ", "color": "\#79838d"},
+  { "full_text" : "  \uf021  ${execpi 3600 checkupdates | wc -l} ", "color": "\#79838d"}
+],
