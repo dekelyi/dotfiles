@@ -24,8 +24,8 @@ zinit wait lucid for \
 zinit wait lucid for \
 	light-mode	Aloxaf/fzf-tab
 
-#zinit ice wait'0a' lucid atinit"zicompinit; zicdreplay"
-#zinit light zsh-users/zsh-completions
+zinit as"completion" mv"yadm.zsh_completion -> _yadm" for \
+	https://raw.githubusercontent.com/TheLocehiliosan/yadm/master/completion/yadm.zsh_completion
 # }}}
 
 # {{{ completions style
