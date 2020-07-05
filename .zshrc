@@ -5,7 +5,6 @@ eval "$(starship init zsh)"
 alias _=sudo
 alias exal='exa --icons -Flaigh'
 alias yay='yay --pacman powerpill'
-
 # }}}
 
 if [ -z "$EDITOR" ]; then
@@ -48,9 +47,8 @@ realpath=\${(Qe)~realpath}
 "
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
-zstyle ':fzf-tab:complete:cd:*' extra-opts --preview="$extract; $(echo $aliases[exal]) --color=always $realpath"
+zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract"$(echo $aliases[exal]) --color=always "'$realpath'
 eval $(zstyle -L | grep ':fzf-tab:complete:cd:*' | sed 's/:cd:/:ls:/')
-chpwd() exal
 # }}}
 
 # {{{ options

@@ -1,30 +1,27 @@
-[submodule "/home/dekel/.config/nvim/pack/minpac/opt/minpac"]
-	path = /home/dekel/.config/nvim/pack/minpac/opt/minpac
-	url = https://github.com/k-takata/minpac.git
 [submodule ".config/nvim/pack/minpac/start/nord-vim"]
 	path = .config/nvim/pack/minpac/start/nord-vim
 	url = ./.config/nvim/pack/minpac/start/nord-vim
-[submodule ".config/nvim/pack/minpac/start/coc-actions"]
-	path = .config/nvim/pack/minpac/start/coc-actions
-	url = ./.config/nvim/pack/minpac/start/coc-actions
-[submodule ".config/nvim/pack/minpac/start/coc-explorer"]
-	path = .config/nvim/pack/minpac/start/coc-explorer
-	url = ./.config/nvim/pack/minpac/start/coc-explorer
-[submodule ".config/nvim/pack/minpac/start/coc-lists"]
-	path = .config/nvim/pack/minpac/start/coc-lists
-	url = ./.config/nvim/pack/minpac/start/coc-lists
-[submodule ".config/nvim/pack/minpac/start/coc-spell-checker"]
-	path = .config/nvim/pack/minpac/start/coc-spell-checker
-	url = ./.config/nvim/pack/minpac/start/coc-spell-checker
-[submodule ".config/nvim/pack/minpac/start/coc-vimlsp"]
-	path = .config/nvim/pack/minpac/start/coc-vimlsp
-	url = ./.config/nvim/pack/minpac/start/coc-vimlsp
+[submodule ".config/nvim/pack/coc/start/coc-actions"]
+	path = .config/nvim/pack/coc/start/coc-actions
+	url = ./.config/nvim/pack/coc/start/coc-actions
+[submodule ".config/nvim/pack/coc/start/coc-explorer"]
+	path = .config/nvim/pack/coc/start/coc-explorer
+	url = ./.config/nvim/pack/coc/start/coc-explorer
+[submodule ".config/nvim/pack/coc/start/coc-lists"]
+	path = .config/nvim/pack/coc/start/coc-lists
+	url = ./.config/nvim/pack/coc/start/coc-lists
+[submodule ".config/nvim/pack/coc/start/coc-spell-checker"]
+	path = .config/nvim/pack/coc/start/coc-spell-checker
+	url = ./.config/nvim/pack/coc/start/coc-spell-checker
+[submodule ".config/nvim/pack/coc/start/coc-vimlsp"]
+	path = .config/nvim/pack/coc/start/coc-vimlsp
+	url = ./.config/nvim/pack/coc/start/coc-vimlsp
 [submodule ".config/nvim/pack/minpac/start/coc-zsh"]
 	path = .config/nvim/pack/minpac/start/coc-zsh
 	url = ./.config/nvim/pack/minpac/start/coc-zsh
-[submodule ".config/nvim/pack/minpac/start/coc.nvim"]
-	path = .config/nvim/pack/minpac/start/coc.nvim
-	url = ./.config/nvim/pack/minpac/start/coc.nvim
+[submodule ".config/nvim/pack/coc/start/coc.nvim"]
+	path = .config/nvim/pack/coc/start/coc.nvim
+	url = ./.config/nvim/pack/coc/start/coc.nvim
 [submodule ".config/nvim/pack/minpac/start/context.vim"]
 	path = .config/nvim/pack/minpac/start/context.vim
 	url = ./.config/nvim/pack/minpac/start/context.vim
@@ -40,3 +37,6 @@
 [submodule ".config/nvim/pack/minpac/start/vim-lsp"]
 	path = .config/nvim/pack/minpac/start/vim-lsp
 	url = ./.config/nvim/pack/minpac/start/vim-lsp
+[submodule ".config/nvim/pack/plugins/start/coc-zsh"]
+	path = .config/nvim/pack/plugins/start/coc-zsh
+	url = git@github.com:tjdevries/coc-zsh.git
