@@ -1,3 +1,4 @@
+# vim: foldmethod=marker
 source ~/.local/share/zinit/bin/zinit.zsh
 eval "$(starship init zsh)"
 

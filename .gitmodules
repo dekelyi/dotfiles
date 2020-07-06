@@ -4,9 +4,6 @@
 [submodule ".config/nvim/pack/coc/start/coc-actions"]
 	path = .config/nvim/pack/coc/start/coc-actions
 	url = ./.config/nvim/pack/coc/start/coc-actions
-[submodule ".config/nvim/pack/coc/start/coc-explorer"]
-	path = .config/nvim/pack/coc/start/coc-explorer
-	url = ./.config/nvim/pack/coc/start/coc-explorer
 [submodule ".config/nvim/pack/coc/start/coc-lists"]
 	path = .config/nvim/pack/coc/start/coc-lists
 	url = ./.config/nvim/pack/coc/start/coc-lists
@@ -43,3 +40,9 @@
 [submodule ".config/nvim/pack/plugins/start/onedark.vim"]
 	path = .config/nvim/pack/plugins/start/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
+[submodule ".config/nvim/pack/plugins/start/vim-clap"]
+	path = .config/nvim/pack/plugins/start/vim-clap
+	url = https://github.com/liuchengxu/vim-clap
+[submodule ".config/nvim/pack/plugins/start/nerdtree"]
+	path = .config/nvim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
