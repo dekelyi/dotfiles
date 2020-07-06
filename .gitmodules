@@ -20,7 +20,7 @@
 	path = .config/nvim/pack/plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
 [submodule ".config/nvim/pack/plugins/start/lightline.vim"]
-	path = .config/nvim/pack/plugins/start/lightline.vim
+	path = .config/nvim/pack/plugins/opt/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".config/nvim/pack/plugins/start/vim-floaterm"]
 	path = .config/nvim/pack/plugins/start/vim-floaterm
@@ -43,3 +43,6 @@
 [submodule ".config/nvim/pack/plugins/start/vista.vim"]
 	path = .config/nvim/pack/plugins/start/vista.vim
 	url = https://github.com/liuchengxu/vista.vim
+[submodule ".config/nvim/pack/plugins/start/vim-airline"]
+	path = .config/nvim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
