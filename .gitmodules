@@ -1,39 +1,30 @@
-[submodule ".config/nvim/pack/minpac/start/nord-vim"]
-	path = .config/nvim/pack/minpac/start/nord-vim
-	url = ./.config/nvim/pack/minpac/start/nord-vim
 [submodule ".config/nvim/pack/coc/start/coc-actions"]
 	path = .config/nvim/pack/coc/start/coc-actions
-	url = ./.config/nvim/pack/coc/start/coc-actions
+	url = https://github.com/iamcco/coc-actions.git
 [submodule ".config/nvim/pack/coc/start/coc-lists"]
 	path = .config/nvim/pack/coc/start/coc-lists
-	url = ./.config/nvim/pack/coc/start/coc-lists
+	url =https://github.com/neoclide/coc-lists.git
 [submodule ".config/nvim/pack/coc/start/coc-spell-checker"]
 	path = .config/nvim/pack/coc/start/coc-spell-checker
-	url = ./.config/nvim/pack/coc/start/coc-spell-checker
+	url = https://github.com/iamcco/coc-spell-checker.git
 [submodule ".config/nvim/pack/coc/start/coc-vimlsp"]
 	path = .config/nvim/pack/coc/start/coc-vimlsp
-	url = ./.config/nvim/pack/coc/start/coc-vimlsp
-[submodule ".config/nvim/pack/minpac/start/coc-zsh"]
-	path = .config/nvim/pack/minpac/start/coc-zsh
-	url = ./.config/nvim/pack/minpac/start/coc-zsh
+	url = https://github.com/iamcco/coc-vimlsp.git
 [submodule ".config/nvim/pack/coc/start/coc.nvim"]
 	path = .config/nvim/pack/coc/start/coc.nvim
-	url = ./.config/nvim/pack/coc/start/coc.nvim
-[submodule ".config/nvim/pack/minpac/start/context.vim"]
-	path = .config/nvim/pack/minpac/start/context.vim
-	url = ./.config/nvim/pack/minpac/start/context.vim
-[submodule ".config/nvim/pack/minpac/start/indentLine"]
-	path = .config/nvim/pack/minpac/start/indentLine
-	url = ./.config/nvim/pack/minpac/start/indentLine
-[submodule ".config/nvim/pack/minpac/start/lightline.vim"]
-	path = .config/nvim/pack/minpac/start/lightline.vim
-	url = ./.config/nvim/pack/minpac/start/lightline.vim
-[submodule ".config/nvim/pack/minpac/start/vim-floaterm"]
-	path = .config/nvim/pack/minpac/start/vim-floaterm
-	url = ./.config/nvim/pack/minpac/start/vim-floaterm
-[submodule ".config/nvim/pack/minpac/start/vim-lsp"]
-	path = .config/nvim/pack/minpac/start/vim-lsp
-	url = ./.config/nvim/pack/minpac/start/vim-lsp
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".config/nvim/pack/plugins/start/context.vim"]
+	path = .config/nvim/pack/plugins/start/context.vim
+	url = https://github.com/wellle/context.vim.git
+[submodule ".config/nvim/pack/plugins/start/indentLine"]
+	path = .config/nvim/pack/plugins/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule ".config/nvim/pack/plugins/start/lightline.vim"]
+	path = .config/nvim/pack/plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".config/nvim/pack/plugins/start/vim-floaterm"]
+	path = .config/nvim/pack/plugins/start/vim-floaterm
+	url = https://github.com/voldikss/vim-floaterm.git
 [submodule ".config/nvim/pack/plugins/start/coc-zsh"]
 	path = .config/nvim/pack/plugins/start/coc-zsh
 	url = git@github.com:tjdevries/coc-zsh.git
