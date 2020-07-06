@@ -4,6 +4,7 @@ eval "$(starship init zsh)"
 
 # {{{ aliases
 alias _=sudo
+alias sc=systemctl
 alias exal='exa --icons -Flaigh'
 alias yay='yay --pacman powerpill'
 export MANPAGER='nvim +Man!'
@@ -25,9 +26,6 @@ zinit wait lucid for \
 
 zinit wait lucid for \
 	light-mode	Aloxaf/fzf-tab
-
-zinit as"completion" mv"yadm.zsh_completion -> _yadm" for \
-	https://raw.githubusercontent.com/TheLocehiliosan/yadm/master/completion/yadm.zsh_completion
 # }}}
 
 # {{{ completions style

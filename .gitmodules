@@ -37,3 +37,9 @@
 [submodule ".config/nvim/pack/plugins/start/nerdtree"]
 	path = .config/nvim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule ".config/nvim/pack/plugins/opt/vim-startify"]
+	path = .config/nvim/pack/plugins/opt/vim-startify
+	url = https://github.com/mhinz/vim-startify
+[submodule ".config/nvim/pack/plugins/start/vista.vim"]
+	path = .config/nvim/pack/plugins/start/vista.vim
+	url = https://github.com/liuchengxu/vista.vim
