@@ -40,3 +40,6 @@
 [submodule ".config/nvim/pack/plugins/start/coc-zsh"]
 	path = .config/nvim/pack/plugins/start/coc-zsh
 	url = git@github.com:tjdevries/coc-zsh.git
+[submodule ".config/nvim/pack/plugins/start/onedark.vim"]
+	path = .config/nvim/pack/plugins/start/onedark.vim
+	url = https://github.com/joshdick/onedark.vim

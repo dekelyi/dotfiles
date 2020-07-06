@@ -5,11 +5,13 @@ eval "$(starship init zsh)"
 alias _=sudo
 alias exal='exa --icons -Flaigh'
 alias yay='yay --pacman powerpill'
-# }}}
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 if [ -z "$EDITOR" ]; then
 	export EDITOR='nvim' VISUAL='nvim'
 fi
+# }}}
 
 # {{{ zinit plugins
 zinit wait lucid for \
