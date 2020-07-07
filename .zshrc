@@ -26,6 +26,10 @@ zinit wait lucid for \
 
 zinit wait lucid for \
 	light-mode	Aloxaf/fzf-tab
+
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
+zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
+zinit snippet OMZ::plugins/man/man.plugin.zsh 
 # }}}
 
 # {{{ completions style
@@ -74,6 +78,7 @@ setopt nolisttypes
 setopt listpacked
 setopt automenu
 setopt auto_cd
+bindkey -e
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char

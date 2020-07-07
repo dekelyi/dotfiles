@@ -4,11 +4,11 @@
 [submodule ".config/nvim/pack/coc/start/coc-lists"]
 	path = .config/nvim/pack/coc/start/coc-lists
 	url =https://github.com/neoclide/coc-lists.git
-[submodule ".config/nvim/pack/coc/start/coc-spell-checker"]
-	path = .config/nvim/pack/coc/start/coc-spell-checker
+[submodule ".config/nvim/pack/coc/opt/coc-spell-checker"]
+	path = .config/nvim/pack/coc/opt/coc-spell-checker
 	url = https://github.com/iamcco/coc-spell-checker.git
-[submodule ".config/nvim/pack/coc/start/coc-vimlsp"]
-	path = .config/nvim/pack/coc/start/coc-vimlsp
+[submodule ".config/nvim/pack/coc/opt/coc-vimlsp"]
+	path = .config/nvim/pack/coc/opt/coc-vimlsp
 	url = https://github.com/iamcco/coc-vimlsp.git
 [submodule ".config/nvim/pack/coc/start/coc.nvim"]
 	path = .config/nvim/pack/coc/start/coc.nvim
@@ -25,8 +25,8 @@
 [submodule ".config/nvim/pack/plugins/start/vim-floaterm"]
 	path = .config/nvim/pack/plugins/start/vim-floaterm
 	url = https://github.com/voldikss/vim-floaterm.git
-[submodule ".config/nvim/pack/plugins/start/coc-zsh"]
-	path = .config/nvim/pack/plugins/start/coc-zsh
+[submodule ".config/nvim/pack/coc/opt/coc-zsh"]
+	path = .config/nvim/pack/coc/opt/coc-zsh
 	url = git@github.com:tjdevries/coc-zsh.git
 [submodule ".config/nvim/pack/plugins/start/onedark.vim"]
 	path = .config/nvim/pack/plugins/start/onedark.vim
@@ -37,11 +37,11 @@
 [submodule ".config/nvim/pack/plugins/start/nerdtree"]
 	path = .config/nvim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule ".config/nvim/pack/plugins/opt/vim-startify"]
-	path = .config/nvim/pack/plugins/opt/vim-startify
+[submodule ".config/nvim/pack/plugins/start/vim-startify"]
+	path = .config/nvim/pack/plugins/start/vim-startify
 	url = https://github.com/mhinz/vim-startify
-[submodule ".config/nvim/pack/plugins/start/vista.vim"]
-	path = .config/nvim/pack/plugins/start/vista.vim
+[submodule ".config/nvim/pack/plugins/opt/vista.vim"]
+	path = .config/nvim/pack/plugins/opt/vista.vim
 	url = https://github.com/liuchengxu/vista.vim
 [submodule ".config/nvim/pack/plugins/start/vim-airline"]
 	path = .config/nvim/pack/plugins/start/vim-airline
