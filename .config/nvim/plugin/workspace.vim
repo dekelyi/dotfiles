@@ -3,19 +3,32 @@ augroup WorkspaceSetup
     autocmd VimEnter,TabNewEntered * :NERDTree
     autocmd VimEnter,TabNewEntered * :2wincmd w
 
-    autocmd BufEnter * if CountWindows() == 0 | if tabpagenr() == 1 | qall | else | tabclose | endif | endif
+    autocmd WinEnter * call CloseNoFile()
+    autocmd VimEnter,TabNewEntered,TabEnter * let s:prev_wins = winnr('$')
 augroup END
 
-function! CountWindows()
-    let c = 0
-    while c < winnr('$')
-        if index(['', 'terminal', 'nowrite'], &buftype) >= 0
-            return 1
+let s:prev_wins = 0
+function! CloseNoFile()
+    let _count = 0
+    let sould_close = 0
+
+    while _count < winnr('$')
+        if index(['', 'terminal', 'nowrite', 'help'], &buftype) >= 0
+            let sould_close = 1
         endif
         wincmd w
-        let c += 1
+        let _count += 1
     endwhile
-    return 0
+
+    if sould_close == 0 && winnr('$') < s:prev_wins
+        if tabpagenr() == 1
+            qall
+        else
+            tabclose
+        endif
+    else
+        let s:prev_wins = winnr('$')
+    endif
 endfunction
 
 

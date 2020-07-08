@@ -46,3 +46,6 @@
 [submodule ".config/nvim/pack/plugins/start/vim-airline"]
 	path = .config/nvim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule ".config/nvim/pack/plugins/opt/lightline.vim"]
+	path = .config/nvim/pack/plugins/opt/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
