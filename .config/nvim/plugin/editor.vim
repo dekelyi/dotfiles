@@ -1,7 +1,6 @@
 set nu
 set clipboard=unnamedplus
-set expandtab
-set shiftwidth=4
+set shiftwidth=4 tabstop=4
 set foldmethod=marker
 
 set linebreak
@@ -35,3 +34,6 @@ function! s:mkdir_as_necessary(dir, force) abort
     call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
   endif
 endfunction
+
+" Force saving files that require root permission 
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!

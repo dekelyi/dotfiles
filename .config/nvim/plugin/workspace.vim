@@ -37,5 +37,5 @@ nnoremap <silent> <leader>e :if exists('b:NERDTree')<CR>wincmd p<CR>else<CR>NERD
 noremap <C-Space> :FloatermToggle<CR>
 tnoremap <C-Space> <C-\><C-n>:FloatermToggle<CR>
 
-nnoremap <leader>cb :Clap buffers<CR>
-nnoremap <leader>cf :Clap files<CR>
+nnoremap <leader>lb :Clap buffers<CR>
+nnoremap <leader>lf :Clap files<CR>
