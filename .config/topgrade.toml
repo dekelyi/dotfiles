@@ -53,6 +53,7 @@ set_title = true
 # Custom commands
 [commands]
 "YADM Submodules" = "cd ~ && yadm submodule update --recursive --remote"
+"Neovim plugins" = "nvim +\"call minpac#install('quitall')\""
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 
 #[brew]

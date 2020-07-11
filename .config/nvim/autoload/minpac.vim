@@ -2,11 +2,11 @@ packadd minpac
 
 function! minpac#setup()
 	call minpac#init({ 'package_name': 'plugins' })
-	call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 	call minpac#add('jiangmiao/auto-pairs')
 	call minpac#add('Yggdroot/indentLine')
 	call minpac#add('joshdick/onedark.vim')
+	call minpac#add('aaadsdf')
 	call minpac#add('vim-airline/vim-airline')
 	call minpac#add('liuchengxu/vim-clap')
 	call minpac#add('tpope/vim-commentary')
@@ -18,10 +18,11 @@ function! minpac#setup()
 	call minpac#add('liuchengxu/vista.vim', { 'type': 'opt' })
 endfunction
 
-function! minpac#install()
+function! minpac#install(...)
+	let after= get(a:, 1, 'call minpac#status()')
 	call minpac#setup()
-	call minpac#update('', { 'do': 'call minpac#status()' })
 	call minpac#clean()
+	call minpac#update('', { 'do': after })
 endfunction
 
 function! CocInstall()
