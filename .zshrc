@@ -10,6 +10,9 @@ alias yay='yay --pacman powerpill'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
+if `which floaterm > /dev/null`; then;
+	alias nvim=floaterm
+fi
 if [ -z "$EDITOR" ]; then
 	export EDITOR='nvim' VISUAL='nvim'
 fi
@@ -30,6 +33,7 @@ zinit wait lucid for \
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
 zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
 zinit snippet OMZ::plugins/man/man.plugin.zsh 
+zinit snippet OMZ::lib/termsupport.zsh
 # }}}
 
 # {{{ completions style
