@@ -52,7 +52,7 @@ set_title = true
 
 # Custom commands
 [commands]
-"YADM Submodules" = "cd ~ && yadm submodule pull"
+"YADM Submodules" = "cd ~ && yadm submodule update --recursive --remote"
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 
 #[brew]
