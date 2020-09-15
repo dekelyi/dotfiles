@@ -1,0 +1,161 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)		
+    // "height": 38, // Waybar height (to be removed for auto height)
+    // "width": 1200, // Waybar width
+    "margin": 0,
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/name",
+        "clock",
+        "sway/mode",
+        "sway/window",
+    ],
+    "modules-center": [
+        "sway/workspaces"
+    ],
+    // "idle_inhibitor",
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "custom/pacman",
+        "tray",
+        "battery",
+        "custom/suspend",
+    ],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "disable-scroll-wraparound": true,
+        "format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        },
+        "format-icons": {
+            //"1": "",
+            //"2": "",
+            // //"2": "",
+            //"3": "",
+            //"4": "",
+            // //"4": "",
+            //"5": "",
+            // 5//": "",
+            //"6": "",
+            // //"6": "",
+            //"7": "",
+            "focused": "",
+            "urgent": "",
+            "default": ""
+        },
+        "icon-size": 18
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        // "max-length": 40,
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 15
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}% ",
+        "tooltip": false,
+        "on-click": "kitty htop"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "BAT: {capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": "kitty nmtui"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/name": {
+        "format": " ~ {}",
+        "exec": "hostnamectl --static",
+        //"return-type": "json",
+        //"on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
+        "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I",
+        "tooltip": false
+    },
+    "custom/pacman": {
+        "format": "{}  ",
+        "interval": 3600, // every hour
+        "exec": "checkupdates | wc -l", // # of updates
+        "exec-if": "exit 0", // always run; consider advanced run conditions
+        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "tooltip": false
+    },
+    "custom/suspend": {
+        "format": "⏻",
+        "on-click": "swaymsg exit",
+        "escape": true,
+        "tooltip": false
+    },
+}

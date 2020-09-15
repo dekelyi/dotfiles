@@ -88,4 +88,4 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 # }}}
 
-source ~/zshrc.d/*
+# source ~/zshrc.d/*
