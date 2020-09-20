@@ -33,10 +33,12 @@ output * bg ~/Pictures/wall.jpg fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 '$lock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep '$lock'
-bindsym $mod+l exec $lock
+	lock '$lock' \
+	 timeout 300 'loginctl lock-session' \
+	 timeout 600 'swaymsg "output * dpms off"' \
+	 	resume 'swaymsg "output * dpms on"' \
+	 before-sleep 'loginctl lock-session'
+bindsym $mod+l exec loginctl lock-session
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -224,4 +226,14 @@ bindsym $mod+F12 scratchpad show
 
 input * {
 	xkb_numlock enable
+	xkb_layout us,il
+	xkb_options "grp:alt_shift_toggle"
+	tap enabled
+    # natural_scroll enabled
 }
+bindsym XF86Sleep exec ~/.config/wofi/logout.py
+
+# rename workspace 1 to 1:web
+# rename workspace 2 to 2:code
+# rename workspace 3 to 3:files
+# rename workspace 4 to 4:term

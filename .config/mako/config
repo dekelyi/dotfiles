@@ -1,16 +1,16 @@
-max-visible=1
+max-visible=3
 anchor=top-right
-font=Inconsolata
-
-icons=1
-markup=1
+font=Iosevka
 
 padding=5
 
-background-color=#689d6a
-progress-color=#ebdbb2
-text-color=#1d2021
+background-color=#282828
+progress-color=#665c54
+text-color=#ebdbb2
 
-border-color=#ebdbb2
-border-size=5
-border-radius=2
+border-color=#689D6A
+border-size=7
+# border-radius=2
+
+icon-path=/usr/share/icons/Numix-Circle/:/usr/share/icons/Adwaita
+max-icon-size=32
