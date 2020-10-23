@@ -1,6 +1,6 @@
 packadd minpac
 
-function! minpac#setup()
+function! plugins#setup()
 	call minpac#init({ 'package_name': 'plugins' })
 
 	call minpac#add('jiangmiao/auto-pairs')
@@ -18,9 +18,9 @@ function! minpac#setup()
 	call minpac#add('liuchengxu/vista.vim', { 'type': 'opt' })
 endfunction
 
-function! minpac#install(...)
+function! plugins#install(...)
 	let after= get(a:, 1, 'call minpac#status()')
-	call minpac#setup()
+	call plugins#setup()
 	call minpac#clean()
 	call minpac#update('', { 'do': after })
 endfunction

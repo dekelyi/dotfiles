@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../sway"
+		},
+		{
+			"path": "../waybar"
+		},
+		{
+			"path": "../wofi"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

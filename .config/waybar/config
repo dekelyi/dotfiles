@@ -1,171 +1,121 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    // "height": 38, // Waybar height (to be removed for auto height)
-    // "width": 1200, // Waybar width
-    "margin": 0,
-    // Choose the order of the modules
-    "modules-left": [
-        "custom/name",
-        "sway/mode",
-        "clock",
-        "custom/keyboard",
-        "sway/window",
-    ],
-    "modules-center": [
-        "sway/workspaces"
-    ],
-    // "idle_inhibitor",
-    "modules-right": [
-        // "custom/pacman",
-        // "tray",
-        "cpu",
-        "pulseaudio",
-        "network",
-        "battery",
-        "idle_inhibitor",
-        "custom/suspend",
-    ],
-    // Modules configuration
-    "sway/workspaces": {
-        "disable-scroll": false,
-        "all-outputs": true,
-        "disable-scroll-wraparound": true,
-        "format": "<span size='large'>{icon}</span> {name}",
-        "persistent_workspaces": {
-            "1:web": [],
-            "2:code": [],
-            "3:files": [],
-            "4:term": []
-        },
-        "format-icons": {
-            "1:web": "",
-            "2:cdoe": "",
-            // "2": "",
-            "3:files": "",
-            // "4": "",
-            "4:term": "",
-            "5": "",
-            // 5 //": "",
-            "6": "",
-            //"6": "",
-            "7": "",
-            "focused": "",
-            "urgent": "",
-            "default": ""
-        },
-        "icon-size": 18
+  "modules-left": [
+    "custom/name",
+    "sway/mode",
+    "clock",
+    "custom/keyboard",
+    "sway/window"
+  ],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": [
+    "cpu",
+    "pulseaudio",
+    "network",
+    "battery",
+    "idle_inhibitor",
+    "custom/suspend"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": false,
+    // "all-outputs": true,
+    "disable-scroll-wraparound": true,
+    "format": "<span size='xx-large'>{icon}</span> {name}",
+    "persistent_workspaces": {
+      "1:term": [],
+      "2:code": [],
+      "3:web": [],
+      "4:misc": []
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/window": {
-        "format": "{}",
-        // "max-length": 40,
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 15
-    },
-    "idle_inhibitor": {
-        "format": "<span size='x-large'>{icon}</span>",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "format": "<span size='x-large'></span> {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "CPU: {usage}% <span size='x-large'></span>",
-        "tooltip": false,
-        "on-click": "kitty htop"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "BAT: {capacity}% <span size='x-large'>{icon}</span>",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) <span size='x-large'></span>",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} <span size='x-large'></span>",
-        "format-linked": "{ifname} (No IP) <span size='x-large'></span>",
-        "format-disconnected": "Disconnected <span size='x-large'>⚠</span>",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "kitty nmtui"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/name": {
-        "format": "<span size='x-large'></span> ~ {}",
-        "exec": "hostnamectl --static",
-        //"return-type": "json",
-        //"on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
-        "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I",
-        "tooltip": false
-    },
-    "custom/pacman": {
-        "format": "{} <span size='x-large'></span>",
-        "interval": 3600, // every hour
-        "exec": "checkupdates | wc -l", // # of updates
-        "exec-if": "exit 0", // always run; consider advanced run conditions
-        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8,
-        "tooltip": false
-    },
-    "custom/suspend": {
-        "format": "<span size='x-large'>⏻</span>",
-        "on-click": "$HOME/.config/wofi/logout.py",
-        "escape": true,
-        "tooltip": false
-    },
-    "custom/keyboard": {
-        "format": "<span size='x-large'></span> {}",
-        // "return-type": "json",
-        // "max-length": 5,
-        "interval": 1, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/keyboard.py", // Script in resources/custom_modules folder
-        // "exec-if": "pgrep spotify"
+    "format-icons": {
+      "1:term": "",
+      "2:code": "",
+      "3:web": "",
+      "4:misc": "",
+      "focused": "",
+      "urgent": "",
+      "default": ""
     }
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "sway/window": {
+    "format": "{}"
+  },
+  "idle_inhibitor": {
+    "format": "<span size='xx-large'>{icon}</span>",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "format": "<span size='xx-large'></span> {:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d/%m/%Y}"
+  },
+  "cpu": {
+    "format": "CPU: {usage}% <span size='xx-large'></span>",
+    "tooltip": false,
+    "on-click": "kitty --class float htop"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BAT: {capacity}% <span size='xx-large'>{icon}</span>",
+    "format-charging": "BAT: {capacity}% <span size='xx-large'></span>",
+    "format-plugged": "BAT: {capacity}% <span size='xx-large'></span>",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) <span size='xx-large'></span>",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} <span size='xx-large'></span>",
+    "format-linked": "{ifname} (No IP) <span size='xx-large'></span>",
+    "format-disconnected": "Disconnected <span size='xx-large'>⚠</span>",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "on-click-right": "kitty --class float nmtui"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% <span size='xx-large'>{icon}</span>",
+    "format-bluetooth": "{volume}% <span size='xx-large'>{icon}</span>",
+    "format-bluetooth-muted": "<span size='xx-large'> {icon}</span>",
+    "format-muted": "<span size='xx-large'></span>",
+    // "format-source": "{volume}% ",
+    // "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/name": {
+    "format": "<span size='xx-large'></span>~ {}",
+    "exec": "hostnamectl --static",
+    "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I",
+    "tooltip": false
+  },
+  "custom/suspend": {
+    "format": "<span size='xx-large'>⏻</span>",
+    "on-click": "$HOME/.config/wofi/logout.py",
+    "tooltip": false
+  },
+  "custom/keyboard": {
+    "format": "<span size='xx-large'></span> {}",
+    "interval": 1,
+    "exec": "$HOME/.config/waybar/keyboard.py"
+  }
 }

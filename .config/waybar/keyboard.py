@@ -1,27 +1,17 @@
 #!/usr/bin/env python
+# Get current keyboard layout short form
 import json
 import subprocess
 
 
-def get_layout(s: str) -> str:
-    js = json.loads(s)
-    devices = [x for x in js if x['type'] == 'keyboard']
-    # print(device)
-    return devices[0]["xkb_active_layout_name"]
+cmd = cmd = subprocess.run(
+    ['swaymsg', '-t', 'get_inputs'], capture_output=True
+)
 
-
-def get_list() -> bytes:
-    cmd = subprocess.run(['swaymsg', '-t', 'get_inputs'], capture_output=True)
-    return cmd.stdout
-
-
-def main():
-    layout = get_layout(get_list()).lower()
-    if layout.startswith("english"):
-        return "EN"
-    if layout.startswith("hebrew"):
-        return "HEB"
-
-
-if __name__ == "__main__":
-    print(main())
+js = json.loads(cmd.stdout.lower())
+devices = [x for x in js if x['type'] == 'keyboard']
+layout = devices[0]["xkb_active_layout_name"]
+if layout.startswith("english"):
+    print("EN")
+if layout.startswith("hebrew"):
+    print("HEB")
