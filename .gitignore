@@ -49,3 +49,4 @@
 .ssh
 .vim
 .zshenv
+.config/nvim/.netrwhist
