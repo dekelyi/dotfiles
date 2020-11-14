@@ -5,6 +5,7 @@ eval "$(starship init zsh)"
 # {{{ aliases
 alias _=sudo
 alias sc=systemctl
+alias dotfiles='lazygit -w ~ -g ~/.config/yadm/repo.git'
 alias exal='exa --icons -Flaigh'
 alias yay='yay --pacman powerpill'
 export MANPAGER='nvim +Man!'
