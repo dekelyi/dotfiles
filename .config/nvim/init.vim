@@ -4,13 +4,21 @@ set title
 set wildmode=list:longest
 setglobal modeline
 
-"autocmd FileType vim packadd coc.nvim
-packadd coc.nvim
 " reload VIMRC on save
-autocmd! BufWritePost *.vim,vimrc,$MYVIMRC ++once source %
+" autocmd! BufWritePost *.vim,vimrc,$MYVIMRC ++once source %
+" autocmd! BufWritePost nvim/**/*.lua ++once luafile %
 
 let g:mapleader=','
-nnoremap <leader>s :CocCommand actions.open<CR>
-nnoremap <leader>l :CocDiagnostics<CR> 
-nnoremap <leader>t :Vista<CR>
-nnoremap <leader>tf :Vista finder clap<CR>
+" nnoremap <leader>s :CocCommand actions.open<CR>
+" nnoremap <leader>l :CocDiagnostics<CR> 
+" nnoremap <leader>t :Vista<CR>
+" nnoremap <leader>tf :Vista finder clap<CR>
+
+function! UpdatePlugins()
+	lua require('plugins')
+	PackerCompile
+	PackerSync
+endfunction
+
+command! Updt call UpdatePlugins()
+

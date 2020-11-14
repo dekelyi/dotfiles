@@ -50,3 +50,5 @@
 .vim
 .zshenv
 .config/nvim/.netrwhist
+
+.config/nvim/plugin/packer_compiled.vim

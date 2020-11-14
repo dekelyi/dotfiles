@@ -51,9 +51,9 @@ set_title = true
 #"Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
 # Custom commands
-[commands]
-"YADM Submodules" = "cd ~ && yadm submodule update --recursive --remote"
-"Neovim plugins" = "nvim +\"call minpac#install('quitall')\""
+#[commands]
+#"YADM Submodules" = "cd ~ && yadm submodule update --recursive --remote"
+#"Neovim plugins" = "nvim +\"call minpac#install('quitall')\""
 #"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 
 #[brew]
