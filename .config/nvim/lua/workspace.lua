@@ -1,3 +1,4 @@
+------ autoclose
 local should_close = {'terminal', 'nowrite', 'nofile', 'help', 'quickfix', 'loclist'}
 
 function get_tabpage_wins()
@@ -35,7 +36,18 @@ function CountPrevWins()
 end
 
 vim.api.nvim_exec([[augroup WorkspaceSetup
-	autocmd!
-	autocmd WinEnter * lua Autoclose()
-	autocmd VimEnter,TabNewEntered,TabEnter * lua CountPrevWins()
+autocmd!
+autocmd WinEnter * lua Autoclose()
+autocmd VimEnter,TabNewEntered,TabEnter * lua CountPrevWins()
 augroup END]], false)
+
+------ Keys
+--- floaterm
+vim.api.nvim_set_keymap('', [[<C-Space>]], [[:FloatermToggle<CR>]], { noremap = true })
+vim.api.nvim_set_keymap('t', [[<C-Space>]], [[<C-\><C-n>:FloatermToggle<CR>]], { noremap= true })
+
+--- telescope
+vim.api.nvim_set_keymap('', [[<leader>lb]], [[:lua require"telescope.builtin".buffers()<CR>]], { noremap= true })
+vim.api.nvim_set_keymap('', [[<leader>ll]], [[:lua require"telescope.builtin".loclist()<CR>]], { noremap= true })
+
+vim.api.nvim_set_keymap('', [[<leader>e]], [[:LuaTreeFindFile<CR>]], { noremap= true })

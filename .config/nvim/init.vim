@@ -22,3 +22,4 @@ endfunction
 
 command! Updt call UpdatePlugins()
 
+lua require('init')
