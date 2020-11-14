@@ -1,54 +1,23 @@
+*
 
-.config/Code - OSS
-.config/Ferdi
-.config/Franz
-.config/JetBrains
-.config/Kingsoft
-.config/QtProject.conf
-.config/Trolltech.conf
-.config/autostart
-.config/bottom
-.config/chromium
-.config/coc
-.config/configstore
-.config/dconf
-.config/dleyna-renderer-service.conf
-.config/eog
-.config/evolution
-.config/gedit
-.config/gitui
-.config/gnome-control-center
-.config/goa-1.0
-.config/google-chrome
-.config/google-chrome
-.config/gotop
-.config/gsconnect
-.config/gtk-3.0
-.config/htop
-.config/jesseduffield
-.config/menus
-.config/mimeapps.list
-.config/nautilus
-.config/neofetch
-.config/nextjs-nodejs
-.config/ookla
-.config/opera
-.config/persepolis_download_manager
-.config/pipewire-media-session
-.config/pulse
-.config/ranger
-.config/rust-analyzer
-.config/spotify
-.config/spotify-tui
-.config/uGet
-.config/user-dirs.dirs
-.config/user-dirs.locale
-.config/vivaldi
-.config/yadm/repo.git
-.config/yarn
-.ssh
-.vim
-.zshenv
-.config/nvim/.netrwhist
+# Terminal
+!.config/kitty
+!.config/nvim
+!.config/topgrade.toml
 
-.config/nvim/plugin/packer_compiled.vim
+# Zsh
+!.zshenv
+!.zshrc
+
+# Sway
+!.config/mako
+!.config/sway
+!.config/waybar
+!.config/wofi
+!.local/bin/sway
+!Pictures/wall.jpg
+
+# Git
+!.gitignore
+!.gitconfig
+!.gitmodules
