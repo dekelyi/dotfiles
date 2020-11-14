@@ -28,5 +28,6 @@ return require('packer').startup(function()
 	-- use {'ms-jpq/chadtree', branch='chad'}
 	use {'kyazdani42/nvim-tree.lua', {'kyazdani42/nvim-web-devicons'}}
 
+	use 'svermeulen/vimpeccable'
 	use 'rafcamlet/nvim-luapad'
 end)
