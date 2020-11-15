@@ -1,23 +1,39 @@
 *
 
-# Terminal
+!/.config/
+/.config/**
+
+#### Terminal
 !.config/kitty
-!.config/nvim
+!.config/kitty/**
+
+!/.config/nvim
+!/.config/nvim/**
+.config/nvim/plugin/packer_compiled.vim
+
 !.config/topgrade.toml
 
-# Zsh
+#### Zsh
 !.zshenv
 !.zshrc
 
-# Sway
+#### Sway
 !.config/mako
+!.config/mako/**
+
 !.config/sway
+!.config/sway/**
+
 !.config/waybar
+!.config/waybar/**
+
 !.config/wofi
+!.config/wofi/**
+
 !.local/bin/sway
 !Pictures/wall.jpg
 
-# Git
+#### Git
 !.gitignore
 !.gitconfig
 !.gitmodules
