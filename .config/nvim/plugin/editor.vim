@@ -42,5 +42,5 @@ function! s:mkdir_as_necessary(dir, force) abort
 endfunction
 
 " Force saving files that require root permission 
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+command! W execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 map <F7> gg=G<C-o><C-o>

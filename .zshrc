@@ -28,14 +28,14 @@ zinit wait lucid for \
 	atload"!\_zsh\_autosuggest\_start" \
 	light-mode zsh-users/zsh-autosuggestions \
 
-zinit wait lucid for \
+	zinit wait lucid for \
 	light-mode	Aloxaf/fzf-tab
 
-zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
-zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
-zinit snippet OMZ::plugins/man/man.plugin.zsh 
-zinit snippet OMZ::lib/termsupport.zsh
-# }}}
+	zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
+	zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
+	zinit snippet OMZ::plugins/man/man.plugin.zsh 
+	zinit snippet OMZ::lib/termsupport.zsh
+	# }}}
 
 # {{{ completions style
 zstyle ':completion:*' completer _expand_alias _expand _complete _ignored _approximate
@@ -83,10 +83,20 @@ setopt nolisttypes
 setopt listpacked
 setopt automenu
 setopt auto_cd
+
 bindkey -e
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
+
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+# Vi style:
+# zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
 # }}}
 
 # source ~/zshrc.d/*
