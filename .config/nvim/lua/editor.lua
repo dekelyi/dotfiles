@@ -7,6 +7,9 @@ vim.o.completeopt='menuone,noinsert,noselect'
 vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], {expr = true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], {expr = true})
 
+------ Diagnistics
+vim.g.diagnostic_enable_virtual_text = true
+
 ------ LSP
 vim.cmd [[packadd nvim-lspconfig]]
 local lsp = require('nvim_lsp')
@@ -18,6 +21,7 @@ end
 
 require('nlua.lsp.nvim').setup(lsp, {on_attach = on_attach})
 lsp.vimls.setup({on_attach=on_attach})
+lsp.rust_analyzer.setup({on_attach=on_attach})
 
 ------ Format
 function M.Format()
