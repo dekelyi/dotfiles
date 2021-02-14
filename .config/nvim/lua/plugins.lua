@@ -12,7 +12,6 @@ return require('packer').startup(function()
 
 	use 'neovim/nvim-lspconfig'
 	use 'nvim-lua/completion-nvim'
-	use 'nvim-lua/diagnostic-nvim'
 	use 'tjdevries/nlua.nvim'
 
 	use 'tpope/vim-commentary'

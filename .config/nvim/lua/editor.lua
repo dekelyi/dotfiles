@@ -12,14 +12,17 @@ vim.g.diagnostic_enable_virtual_text = true
 
 ------ LSP
 vim.cmd [[packadd nvim-lspconfig]]
-local lsp = require('nvim_lsp')
+local lsp = require('lspconfig')
 
 local function on_attach(client) 
 	require'completion'.on_attach(client)
-	require'diagnostic'.on_attach(client)
+	-- require'diagnostic'.on_attach(client)
 end
 
-require('nlua.lsp.nvim').setup(lsp, {on_attach = on_attach})
+require('nlua.lsp.nvim').setup(lsp, {
+	on_attach = on_attach,
+	cmd = {'lua-language-server'}
+})
 lsp.vimls.setup({on_attach=on_attach})
 lsp.rust_analyzer.setup({on_attach=on_attach})
 
