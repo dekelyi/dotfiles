@@ -14,7 +14,7 @@ if `which floaterm > /dev/null`; then;
 	alias nvim=floaterm
 fi
 if [ -z "$EDITOR" ]; then
-	export EDITOR='nvim' VISUAL='nvim'
+	export EDITOR='nvim' VISUAL='nvim' DIFFPROG="nvim -d"
 fi
 # }}}
 
