@@ -7,7 +7,6 @@ alias _=sudo
 alias sc=systemctl
 alias dotfiles='lazygit -w ~ -g ~/.local/share/yadm/repo.git'
 alias exal='exa --icons -Flaigh'
-alias yay='yay --pacman powerpill'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
@@ -28,14 +27,12 @@ zinit wait lucid for \
 	atload"!\_zsh\_autosuggest\_start" \
 	light-mode zsh-users/zsh-autosuggestions \
 
-	zinit wait lucid for \
-	light-mode	Aloxaf/fzf-tab
-
-	zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
-	zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
-	zinit snippet OMZ::plugins/man/man.plugin.zsh 
-	zinit snippet OMZ::lib/termsupport.zsh
-	# }}}
+	zinit ice atload'bindkey "\e"s sudo-command-line; bindkey -r "\e\e"'
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
+zinit ice atload'bindkey "\e"m man-command-line; bindkey -r "\e"man'
+zinit snippet OMZ::plugins/man/man.plugin.zsh 
+zinit snippet OMZ::lib/termsupport.zsh
+# }}}
 
 # {{{ completions style
 zstyle ':completion:*' completer _expand_alias _expand _complete _ignored _approximate
