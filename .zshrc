@@ -7,6 +7,7 @@ alias _=sudo
 alias sc=systemctl
 alias dotfiles='lazygit -w ~ -g ~/.local/share/yadm/repo.git'
 alias exal='exa --icons -Flaigh'
+alias paru='paru --noconfirm'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
