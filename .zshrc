@@ -26,6 +26,7 @@ zinit wait lucid for \
 	light-mode zsh-users/zsh-history-substring-search \
 	atload"!\_zsh\_autosuggest\_start" \
 	light-mode zsh-users/zsh-autosuggestions \
+	light-mode "Aloxaf/fzf-tab" \
 
 	zinit ice atload'bindkey "\e"s sudo-command-line; bindkey -r "\e\e"'
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh 
