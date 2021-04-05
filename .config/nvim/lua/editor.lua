@@ -14,17 +14,33 @@ vim.g.diagnostic_enable_virtual_text = true
 vim.cmd [[packadd nvim-lspconfig]]
 local lsp = require('lspconfig')
 
-local function on_attach(client) 
+local function on_attach(client)
 	require'completion'.on_attach(client)
-	-- require'diagnostic'.on_attach(client)
 end
 
-require('nlua.lsp.nvim').setup(lsp, {
-	on_attach = on_attach,
-	cmd = {'lua-language-server'}
-})
 lsp.vimls.setup({on_attach=on_attach})
 lsp.rust_analyzer.setup({on_attach=on_attach})
+lsp.sumneko_lua.setup {
+	cmd = {'lua-language-server'},
+	on_attach=on_attach,
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+				path = vim.split(package.path, ';'),
+			},
+			diagnostics = {
+				globals = {'vim', 'vimp'},
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+					[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+				},
+			},
+		},
+	},
+}
 
 ------ Format
 function M.Format()
