@@ -1,36 +1,38 @@
+local lualine = require('lualine')
+
 local M = {}
 
------- Lightline
-local function _widthlimit(str)
-	if vim.api.nvim_win_get_width(0) > 70 then
-		return str
-	else
-		return ''
-	end
-end
-
-M.lightline_components = {
-	fileformat = function() _widthlimit(vim.o.fileformat) end,
-	filetype = function() _widthlimit(vim.o.filetype) end
+lualine.setup{
+	options = {
+		-- theme = 'onedark',
+		section_separators = {'', ''},
+		component_separators = {'', ''},
+		icons_enabled = true,
+	},
+	sections = {
+		lualine_a = { {'mode', upper = true} },
+		lualine_b = { {'branch', icon = ''} },
+		lualine_c = { {'filename', file_status = true} },
+		lualine_x = { 'encoding', 'fileformat', 'filetype' },
+		lualine_y = { { 'diagnostics', sources = {'nvim_lsp'} }, 'progress' },
+		lualine_z = { 'location'  },
+	},
+	inactive_sections = {
+		lualine_a = {  },
+		lualine_b = {  },
+		lualine_c = { 'filename' },
+		lualine_x = { 'location' },
+		lualine_y = {  },
+		lualine_z = {   }
+	},
 }
-
-local lightline_config = { component_function = {} }
-for key,val in pairs(M.lightline_components) do
-	lightline_config.component_function[key] = string.format("v:lua.require('theme').lightline_components.%s()", key)
-end
-
-function M.RedrawStatus()
-	vim.g.lightline = lightline_config
-	vim.fn["lightline#init"]()
-	vim.fn["lightline#colorscheme"]()
-	vim.fn["lightline#update"]()
-end
 
 ------ Theme
 function M.ThemeSwitch(...)
 	local color = select(1, ...)
 
 	if color == nil then
+		-- set the opposite of the current theme
 		if vim.o.background == 'dark' then
 			color = 'light'
 		else
@@ -38,19 +40,15 @@ function M.ThemeSwitch(...)
 		end
 	end
 
-	theme = ''
-
 	if color == 'light' then
-		theme = 'PaperColor'
 		vim.o.background = 'light'
+		vim.cmd('colorscheme PaperColor')
+		lualine.setup {options={theme='papercolor_light'}}
 	else
-		theme = 'onedark'
 		vim.o.background = 'dark'
+		vim.cmd('colorscheme onedark')
+		lualine.setup {options={theme='onedark'}}
 	end
-
-	lightline_config.colorscheme = theme
-	vim.cmd(string.format('colorscheme %s', theme))
-	M.RedrawStatus()
 end
 
 ------ Options
@@ -59,8 +57,6 @@ vim.o.showmode = false
 vim.o.inccommand = 'nosplit'
 vim.o.hlsearch = true
 vim.o.incsearch = true
-
-vim.g.indentLine_leadingSpaceEnabled = true
 
 ------ Commands
 vimp.map_command('ThemeSwitch', M.ThemeSwitch)
