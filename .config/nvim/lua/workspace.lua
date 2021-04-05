@@ -51,6 +51,6 @@ vim.api.nvim_set_keymap('t', [[<C-Space>]], [[<C-\><C-n>:FloatermToggle<CR>]], {
 vim.api.nvim_set_keymap('', [[<leader>lb]], [[:lua require"telescope.builtin".buffers()<CR>]], { noremap= true })
 vim.api.nvim_set_keymap('', [[<leader>ll]], [[:lua require"telescope.builtin".loclist()<CR>]], { noremap= true })
 
-vim.api.nvim_set_keymap('', [[<leader>e]], [[:LuaTreeFindFile<CR>]], { noremap= true })
+vim.api.nvim_set_keymap('', [[<leader>e]], [[:NvimTreeFindFile<CR>]], { noremap= true })
 
 return M
