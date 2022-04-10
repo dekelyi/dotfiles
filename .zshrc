@@ -1,5 +1,5 @@
 # vim: foldmethod=marker
-source ~/.local/share/zinit/bin/zinit.zsh
+source ~/.local/share/zinit/zinit.git/zinit.zsh
 eval "$(starship init zsh)"
 
 # {{{ aliases
@@ -98,3 +98,4 @@ bindkey '^x^e' edit-command-line
 # }}}
 
 # source ~/zshrc.d/*
+### End of Zinit's installer chunk
