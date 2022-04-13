@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
 	use 'nvim-lua/completion-nvim'
 
 	use 'tpope/vim-commentary'
-	use {'lukas-reineke/indent-blankline.nvim', branch='lua'}
+	use 'lukas-reineke/indent-blankline.nvim'
 	use {'liuchengxu/vista.vim', opt = true}
 
 	use 'voldikss/vim-floaterm'
